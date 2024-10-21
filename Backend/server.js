@@ -1,0 +1,32 @@
+import express from "express";
+import cors from "cors";
+import "dotenv/config";
+import { connectDB } from "./config/dbConnection.js";
+import connectCloudinary from "./config/cloudinary.js";
+
+// App config
+const app = express();
+const PORT = process.env.PORT || 8000;
+connectDB();
+
+// Middlewares
+app.use(express.json());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+
+import userRouter from "./routes/user.routes.js";
+import productRouter from "./routes/product.routes.js";
+import cartRouter from "./routes/cart.routes.js";
+import orderRouter from './routes/order.routes.js'
+
+app.use("/api/user", userRouter);
+app.use("/api/product", productRouter);
+app.use("/api/cart",cartRouter);
+app.use("/api/order", orderRouter);
+
+// Connect to DB and start the server
+app.listen(PORT, async () => {
+  await connectDB();
+  connectCloudinary();
+  console.log(`Server is listening on ${PORT}`);
+});
