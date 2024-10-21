@@ -19,9 +19,6 @@ import productRouter from "./routes/product.routes.js";
 import cartRouter from "./routes/cart.routes.js";
 import orderRouter from './routes/order.routes.js'
 
-app.use("/",(req,res) => {
-  res.send("API IS WORKING...")
-})
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
 app.use("/api/cart",cartRouter);
