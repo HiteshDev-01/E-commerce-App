@@ -14,6 +14,10 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
+app.use("/",(req,res) => {
+  res.send("API IS WORKING")
+})
+
 import userRouter from "./routes/user.routes.js";
 import productRouter from "./routes/product.routes.js";
 import cartRouter from "./routes/cart.routes.js";
