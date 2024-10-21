@@ -3,7 +3,6 @@ import { backendUrl, currency } from "../App.jsx";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { assets } from "../assets/assets.js";
-import { allOrders } from "../../../Backend/controllers/order.controller";
 
 const Orders = ({ token }) => {
   const [orders, setOrders] = useState([]);
