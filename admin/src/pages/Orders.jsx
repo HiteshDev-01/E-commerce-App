@@ -24,6 +24,8 @@ const Orders = ({ token }) => {
         }
       );
 
+      console.log(response);
+
       if (response.data.success && response.data.allOrders.length > 0) {
         setOrders(response.data.allOrders);
       } else {
