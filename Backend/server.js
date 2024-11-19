@@ -20,9 +20,9 @@ app.use(
 );
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", (req, res) => {
-  res.send("API IS WORKING");
-});
+// app.use("/", (req, res) => {
+//   res.send("API IS WORKING");
+// });
 
 import userRouter from "./routes/user.routes.js";
 import productRouter from "./routes/product.routes.js";
