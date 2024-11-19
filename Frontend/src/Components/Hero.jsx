@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
       </div>
       {/* {Right hero section} */}
-      <img src={assets.logo2} alt="geroImg" className="w-full sm:w-1/2" />
+      <img src={assets.hero_img} alt="geroImg" className="w-full sm:w-1/2" />
     </div>
   );
 };
