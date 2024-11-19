@@ -11,13 +11,26 @@ connectDB();
 
 // Middlewares
 app.use(express.json());
+const allowedOrigins = [
+  "https://clothesmaniaadmin.vercel.app",
+  "https://clothesmania.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "https://clothesmaniaadmin.vercel.app", // Allow requests only from this origin
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow specific methods
-    credentials: true, // Allow cookies and credentials if needed
+    origin: function (origin, callback) {
+      // Allow requests with no origin (e.g., mobile apps or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
   })
 );
+
 app.use(express.urlencoded({ extended: true }));
 
 // app.use("/", (req, res) => {
