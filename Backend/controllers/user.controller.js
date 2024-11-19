@@ -16,7 +16,7 @@ export const login = async (req, res) => {
     if (!user) {
       return res.json({
         success: false,
-        message: "User not exist register first",
+        message: "User not exist , register first",
       });
     }
 

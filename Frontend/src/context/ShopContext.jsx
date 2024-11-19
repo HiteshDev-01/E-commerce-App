@@ -60,7 +60,7 @@ const ShopContextProvider = (props) => {
       toast.error(error.message);
     }
   };
-  
+
   useEffect(() => {
     if (!token && localStorage.getItem("token")) {
       getCartData(localStorage.getItem("token"));

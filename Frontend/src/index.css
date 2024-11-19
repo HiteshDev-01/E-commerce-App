@@ -8,15 +8,15 @@ a.active hr {
   display: block;
 }
 
-@media (max-width:640px) {
+@media (max-width: 640px) {
   a.active {
     background-color: #020617;
-    color:rgb(216, 231, 15);
+    color: rgb(216, 231, 15);
   }
 }
 
-::-webkit-scrollbar{
-  display:none;
+::-webkit-scrollbar {
+  display: none;
 }
 
 .new-amsterd-regular {

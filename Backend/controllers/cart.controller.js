@@ -34,12 +34,12 @@ const addToCart = async (req, res) => {
 // function for updateCart product
 const updateCart = async (req, res) => {
   try {
-    const { userId, itemId, size, qunatity } = req.body;
+    const { userId, itemId, size, quantity } = req.body;
 
     const userData = await User.findById(userId);
     const cartData = await userData.cartData;
 
-    cartData[itemId][size] = qunatity;
+    cartData[itemId][size] = quantity;
 
     await User.findByIdAndUpdate(userId, { $set: { cartData } });
     res.json({ success: true, message: "Cart product updated" });

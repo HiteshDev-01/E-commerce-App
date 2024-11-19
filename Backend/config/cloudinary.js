@@ -12,7 +12,6 @@ const connectCloudinary = () => {
       api_secret: CLOUDINARY_API_SECRET,
       cloud_name: CLOUD_NAME,
     });
-
   } catch (error) {
     console.error("Failed to config the cloudinary:", error.message);
   }
