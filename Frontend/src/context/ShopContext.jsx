@@ -34,7 +34,7 @@ const ShopContextProvider = (props) => {
 
   useEffect(() => {
     getProductsData();
-  }, []);
+  }, [products]);
 
   const getCartData = async (token) => {
     try {
@@ -66,7 +66,7 @@ const ShopContextProvider = (props) => {
       getCartData(localStorage.getItem("token"));
       setToken(localStorage.getItem("token"));
     }
-  }, []);
+  }, [cartData]);
 
   const addToCart = async (itemId, size) => {
     let cartData = structuredClone(cartItems || {});
@@ -127,7 +127,7 @@ const ShopContextProvider = (props) => {
             if (cartItems[items][item] > 0) {
               totalAmount += productInfo.price * cartItems[items][item];
             }
-          } catch (error) {}
+          } catch (error) { }
         }
       }
     }

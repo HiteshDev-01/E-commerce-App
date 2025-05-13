@@ -71,8 +71,18 @@ const Navbar = () => {
                 <p className="cursor-pointer hover:text-slate-200">
                   My Profile
                 </p>
-                <p onClick={() => navigate('/orders')}className="cursor-pointer hover:text-slate-200">orders</p>
-                <p onClick={logout}className="cursor-pointer hover:text-slate-200">Logout</p>
+                <p
+                  onClick={() => navigate("/orders")}
+                  className="cursor-pointer hover:text-slate-200"
+                >
+                  orders
+                </p>
+                <p
+                  onClick={logout}
+                  className="cursor-pointer hover:text-slate-200"
+                >
+                  Logout
+                </p>
               </div>
             )}
           </div>
@@ -92,9 +102,7 @@ const Navbar = () => {
       </div>
       {/* { Sidebar for small screens} */}
       <div
-        className={`absolute top-0 bottom-0 right-0 overflow-hidden bg-white transition-all ${
-          visible ? "w-full" : "w-0"
-        }`}
+        className={`absolute top-0 bottom-0 right-0 overflow-hidden bg-white transition-all ${visible ? "w-full" : "w-0"}`}
       >
         <div className="flex flex-col">
           <div className="flex items-center gap-4 p-3 cursor-pointer">

@@ -200,11 +200,10 @@ const Add = ({ token }) => {
           {["S", "M", "L", "XL", "XXL"].map((size) => (
             <div key={size}>
               <p
-                className={`${
-                  sizes.includes(size)
-                    ? "bg-pink-300 text-black"
-                    : "bg-black text-white"
-                } px-3 py-2 cursor-pointer`}
+                className={`${sizes.includes(size)
+                  ? "bg-pink-300 text-black"
+                  : "bg-black text-white"
+                  } px-3 py-2 cursor-pointer`}
                 onClick={() => handleSizeClick(size)}
               >
                 {size}

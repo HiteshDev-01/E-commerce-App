@@ -203,7 +203,7 @@ const verifyRazorpay = async (req, res) => {
       });
 
       await User.findByIdAndUpdate(userId, { $set: { cartData: {} } });
-      return res.json({ success: true, message: "Payment successfull"});
+      return res.json({ success: true, message: "Payment successfull" });
     } else {
       return res.json({
         success: false,

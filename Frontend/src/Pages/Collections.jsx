@@ -70,7 +70,7 @@ const Collections = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subcategory, search, showSearch,products]);
+  }, [category, subcategory, search, showSearch, products]);
 
   useEffect(() => {
     sortProduct();

@@ -3,7 +3,7 @@ import React from "react";
 const NewsLetterBox = () => {
   const onSubmitFolder = (event) => {
     event.preventDefault();
-  }
+  };
   return (
     <div className="text-center">
       <p className="text-2xl font-medium text-gray-800">
@@ -16,7 +16,10 @@ const NewsLetterBox = () => {
         fashion-forward community today!
       </p>
 
-      <form onSubmit={onSubmitFolder} className="flex items-center w-full sm:w-1/2 mx-auto gap-3 my-6 pl-3">
+      <form
+        onSubmit={onSubmitFolder}
+        className="flex items-center w-full sm:w-1/2 mx-auto gap-3 my-6 pl-3"
+      >
         <input
           type="email"
           name="emailId"

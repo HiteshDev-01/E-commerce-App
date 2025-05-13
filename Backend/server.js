@@ -10,24 +10,28 @@ const PORT = process.env.PORT || 8000;
 connectDB();
 
 // Middlewares
-app.use(express.json());
 const allowedOrigins = [
   "https://clothesmaniaadmin.vercel.app",
   "https://clothesmania.vercel.app",
 ];
 
+app.use(express.json());
+
+// Fix: Handle preflight requests
+app.options('*', cors());
+
+// Apply CORS
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (e.g., mobile apps or curl)
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
       }
     },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   })
 );
 
